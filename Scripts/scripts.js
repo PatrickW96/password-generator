@@ -10,10 +10,20 @@ var pwLength = 0;
 function generateBtn() {
     pwLength = prompt("Choose password length between 8 and 128 character");
 
+/* Conditional setting alert if user chooses pwLength less than 8 characters */
     if (pwLength < 8) {
         alert("Password must be at least 8 characters long");
         pwLength = prompt("Choose password length between 8 and 128 character");
-    } if (pwLength > 128)
-        alert("Password cannot exceed 128 character");
+    } else {
+        pwLength = pwLength;
+    }
+    
+/* Conditional setting alert if user choose pwLength more than 128 characters */
+    } if (pwLength > 128) {
+        alert("Password cannot exceed 128 characters");
         pwLength = prompt("Choose password length between 8 and 128 character");
-}
+    } else {
+        pwLength = pwLength;
+    }
+
+    
