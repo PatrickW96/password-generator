@@ -6,6 +6,10 @@ var special = ["!" , "@" , "#" , "$" , "%" , "^" , "&" , "*" , "(" , ")" , "{" ,
 /* Creating var to hold the value of the password length  */
 var pwLength = 0;
 
+/* Creating array to hold charater type values */
+
+var userChoice = 0;
+
 /* Creating a function to activate generator when button is clicked */
 function generateBtn() {
     pwLength = prompt("Choose password length between 8 and 128 character");
@@ -19,11 +23,29 @@ function generateBtn() {
     }
     
 /* Conditional setting alert if user choose pwLength more than 128 characters */
-    } if (pwLength > 128) {
+    if (pwLength > 128) {
         alert("Password cannot exceed 128 characters");
         pwLength = prompt("Choose password length between 8 and 128 character");
     } else {
         pwLength = pwLength;
     }
 
-    
+/* Nothing below this line is working. Figure the logic out tomorrow. Figure out how to get the userChoice prompt to work. */
+
+
+
+
+/* Prompt for user to choose character types used in random password */
+userChoice = prompt("Choose what kind of characters to include in your password: numbers, special, lowercase, uppercase");
+
+    /* Conditional to define userCharChoice */
+    if (userChoice !== "numbers" || "special" || "lowercase" || "uppercase" || "all") {
+        alert("You must choose one of the listed");
+        userChoice = prompt("Choose what kind of characters to include in your password: numbers, special, lowercase, uppercase");
+    } else {
+        userChoice = userChoice;
+    }
+
+        console.log(userChoice);
+}
+
