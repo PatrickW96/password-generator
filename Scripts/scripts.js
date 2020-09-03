@@ -15,7 +15,7 @@ function generatorBtn() {
 
 /* Looping conditional to alert user anytime charset is less than 8 and more than 128 */
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 1; i++) {
 
         pwLength = prompt("Choose password length between 8 and 128 characters");
 
@@ -25,32 +25,36 @@ function generatorBtn() {
         } else if (pwLength > 128) {
             alert("Password cannot exceed 128 characters");
             i = 0;
-        } else {
+
+/* Keep working on before this line */
+        } else if (pwLength = lowerCase) {
+            alert("Please choose a number between 8 and 128. Press \"OK\" to continue.");
+            i = 0;   
+        } else if (pwLength = pwLength < 128 && pwLength > 8) {
             pwLength = pwLength;
-            i = 8;
+            i = 1;
         }
     }
 
 /* Looping the conditional used for the character set alert */
-    for (var j = 0; j < 8; j++) {
+    // for (var j = 0; j < 8; j++) {
            
-        userChoice = prompt("Choose one or more of the following choices for you password: lowercase, uppercase, numbers, symbols.");
-        var userChoiceLowerCase = userChoice.toLowerCase();
+    //     userChoice = prompt("Choose one or more of the following choices for you password: lowercase, uppercase, numbers, symbols.");
+    //     var userChoiceLowerCase = userChoice.toLowerCase();
 
-        if (userChoice = 0) {
-            j = 8;
-        } if (userChoiceLowerCase !== "lowercase" , "uppercase" , "numbers" , "symbols") {
-            alert("Please choose one of the listed.");
-            j = 0;
-        } else {
-            userChoiceLowerCase = userChoiceLowerCase;
-            j = 8;
-        }
-    }
-
+    //     if (userChoice = 0) {
+    //         j = 8;
+    //     } if (userChoiceLowerCase !== "lowercase" , "uppercase" , "numbers" , "symbols") {
+    //         alert("Please choose one of the listed.");
+    //         j = 0;
+    //     } else {
+    //         userChoiceLowerCase = userChoiceLowerCase;
+    //         j = 8;
+    //     }
+    // }
+}
 
     // console.log(charAt(0));
 
-}
 
-/* Refer back to JavaScript folder for help tomorrow! */ 
+
