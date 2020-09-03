@@ -8,9 +8,7 @@ var symbols = ["!" , "@" , "#" , "$" , "%" , "^" , "&" , "*" , "(" , ")" , "{" ,
 var pwLength = 0;
 
 /* Creating a var to hold userChoice values */
-// var choices = ["lowercase" , "uppercase" , "numbers" , "symbols"];
-var userCharSet = 0;
-
+var userChoice = 0;
 
 /* Creating a function to activate generator when button is clicked */
 function generatorBtn() {
@@ -35,18 +33,18 @@ function generatorBtn() {
 
 /* Looping the conditional used for the character set alert */
     for (var j = 0; j < 8; j++) {
+        
+        userChoice = prompt("Choose one or more of the following for your password character set: lowercase, uppercase, numbers, symbols.");        
+        var userChoiceLowerCase = userChoice.toLowerCase();
 
-        userCharSet = prompt("Choose one or more of the following characters to be included in your password: lowercase, uppercase, numbers, symbols");
-
-        if (userCharSet !== "lowercase" || userCharSet !== "uppercase"  || userCharSet !== "numbers" || userCharSet !== "symbols") {
-            alert("Please choose one of the listed options. Press \"OK\" to continue.");
-            j = 0;
-        } else { 
-            userCharSet = "lowercase" || userCharSet == "uppercase"  || userCharSet == "numbers" || userCharSet == "symbols";
-            userCharSet = userCharSet;
+        if (userChoiceLowerCase.charAt(0) == "l" , "u" , "n" , "s"); {
+            userChoiceLowerCase = userChoiceLowerCase;
             j = 8;
-        }
+        } else { 
+            alert("Please choose one of the listed. Press \*OK\* to continue.");
+            j = 0;
+        }        
     }
 }
 
-/* Refer back to JavaScript folder for help tomorrow! */
+/* Refer back to JavaScript folder for help tomorrow! */ 
