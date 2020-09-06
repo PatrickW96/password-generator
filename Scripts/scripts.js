@@ -1,60 +1,33 @@
 /* Defining charset variables */
 var lowerCase = ["a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z"]; 
-var upperCase = ["a" , "b" , "c" , "d" , "e" , "f" , "g" , "h" , "i" , "j" , "k" , "l" , "m" , "n" , "o" , "p" , "q" , "r" , "s" , "t" , "u" , "v" , "w" , "x" , "y" , "z"]; 
-var numbers = [1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 0];
+var upperCase = lowerCase.toUpperCase;
+var numbers = ["1" , "2" , "3" , "4" , "5" , "6" , "7" , "8" , "9" , "0"];
 var symbols = ["!" , "@" , "#" , "$" , "%" , "^" , "&" , "*" , "(" , ")" , "{" ,  "}" , "[" , "]" , "<" , ">" , "/" , "?"];
 
 /* Creating var to hold the value of the password length  */
 var pwLength = 0;
 
-/* Creating a var to hold userChoice values */
-var userChoice = 0;
+/* Creating vars to hold charset values and user choice values */
+var charset = [lowerCase , upperCase , numbers , symbols];
+var userChoice = "";
 
-/* Creating a function to activate generator when button is clicked */
-function generatorBtn() {
+/* Creating conditional for user pwLength */
+function pwGenerate() {
+    pwLength = prompt("How long would you like your password? (Please choose a number between 8 and 128.");
 
-/* Looping conditional to alert user anytime charset is less than 8 and more than 128 */
 
-    for (var i = 0; i < 1; i++) {
-
-        pwLength = prompt("Choose password length between 8 and 128 characters");
-
-        if (pwLength < 8) {
-            alert("Password must be at least 8 characters long");
-            i = 0;
-        } else if (pwLength > 128) {
-            alert("Password cannot exceed 128 characters");
-            i = 0;
-
-/* Keep working on before this line */
-        } else if (pwLength = lowerCase) {
-            alert("Please choose a number between 8 and 128. Press \"OK\" to continue.");
-            i = 0;   
-        } else if (pwLength = pwLength < 128 && pwLength > 8) {
-            pwLength = pwLength;
-            i = 1;
-        }
+    if (pwLength < 8) {
+    alert("please choose valid length.");
+    return;
+    } if (pwLength > 128) {
+    alert("please choose valid length.");
+    return;
     }
 
-/* Looping the conditional used for the character set alert */
-    // for (var j = 0; j < 8; j++) {
-           
-    //     userChoice = prompt("Choose one or more of the following choices for you password: lowercase, uppercase, numbers, symbols.");
-    //     var userChoiceLowerCase = userChoice.toLowerCase();
+    console.log(pwLength);
 
-    //     if (userChoice = 0) {
-    //         j = 8;
-    //     } if (userChoiceLowerCase !== "lowercase" , "uppercase" , "numbers" , "symbols") {
-    //         alert("Please choose one of the listed.");
-    //         j = 0;
-    //     } else {
-    //         userChoiceLowerCase = userChoiceLowerCase;
-    //         j = 8;
-    //     }
-    // }
+    
+
+
 }
-
-    // console.log(charAt(0));
-
-
 

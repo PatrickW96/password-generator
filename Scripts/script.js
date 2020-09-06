@@ -1,6 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+/* Creating var to hold users character choices */
+var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
+var upperCase = lowerCase.toUpperCase(); 
+var numbers = "1234567890";
+var symbols = "!@#$%^&*(){}[]<>/?";
+var userChoice = "";
+
 /* Creating var to hold pwLength */
 pwLength = 0;
 
@@ -30,17 +37,10 @@ function generatePassword() {
     return;
   }
 
-  /* Creating var to hold users character choices */
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
-  var upperCase = lowerCase.toUpperCase; 
-  var numbers = "1234567890";
-  var symbols = "!@#$%^&*(){}[]<>/?";
-  var userChoice = "";
-
   /* Creating var to hold charset choices */
   var useLowerCase = confirm("Would you like to include Lowercase letters in your password?");
   var useUpperCase = confirm("Would you like to use Uppercase letters in your password?");
-  var useNumbers = confirm("Would you like to include numbers in your password?");
+  var useNumbers = confirm("Would you like to include Numbers in your password?");
   var useSymbols = confirm("Would you like to use Special Characters in your password?");
 
   /* Creating conditional that adds the charset the user chooses to useChoices var */
@@ -57,10 +57,20 @@ function generatePassword() {
     userChoice += symbols;
   }
 
-
-
+  randomPw();
   console.log(userChoice);
 
+} 
+
+/* Creating function that creates the unique password based on the above criteria */
+function randomPw() {  
+
+/* Loop for creating a random numbers list as long as pwLength */
+  for (var i = 0; i < pwLength; i++) {
+    var randomizePw = Math.floor(Math.random() * userChoice.length);
+
+    console.log(randomizePw);
+  }
 }
 
 // Add event listener to generate button
