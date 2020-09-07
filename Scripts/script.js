@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 /* Creating var to hold users character choices */
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
 var upperCase = lowerCase.toUpperCase(); 
-var numbers = "1234567890";
+var numbers = "01234567890123456789";
 var symbols = "!@#$%^&*(){}[]<>/?";
 var userChoice = "";
 
@@ -67,9 +67,11 @@ function randomPw() {
 
 /* Loop for creating a random numbers list as long as pwLength */
   for (var i = 0; i < pwLength; i++) {
-    var randomizePw = Math.floor(Math.random() * userChoice.length);
+    var userChoiceSliced = userChoice.slice(0);
+    var uniquePassword = userChoiceSliced.charAt(Math.floor(Math.random() * userChoiceSliced.length));
 
-    console.log(randomizePw);
+    console.log(uniquePassword);
+    
   }
 }
 
