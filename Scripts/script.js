@@ -63,17 +63,14 @@ function generatePassword() {
 
 /* Creating function that creates the unique password based on the above criteria */
 function randomPw() {  
-  var randomChar = userChoice.charAt(Math.floor(Math.random() * userChoice.length));
-  var passwordArray = [];
-  var i = 0;
-  for (var i =0; i < pwLength; i++) {
+/* Loop for creating random charset with as many character as number value stored in pwLength */
+  for (var i = 0; i < pwLength; i++) {
+    var userChoiceSliced = userChoice.slice(0);
+    var uniquePassword = userChoiceSliced.charAt(Math.floor(Math.random() * userChoiceSliced.length));
 
-    while (i < pwLength) {
-      passwordArray.push(randomChar)
-    }
-  }
-    console.log(passwordArray);
     
+    console.log(uniquePassword);
+  }
 }
 
 
