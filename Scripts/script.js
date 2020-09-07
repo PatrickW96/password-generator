@@ -5,9 +5,8 @@ var generateBtn = document.querySelector("#generate");
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
 var upperCase = lowerCase.toUpperCase(); 
 var numbers = "01234567890123456789";
-var symbols = "!@#$%^&*(){}[]<>/?";
+var symbols = "!@#$%^&*(){}[]<>/?_+=!@#$%^&*(){}[]<>";
 var userChoice = "";
-
 /* Creating var to hold pwLength */
 pwLength = 0;
 
@@ -26,7 +25,7 @@ function writePassword() {
 function generatePassword() {
   console.log("we in here");
   /* Creating a var to pwlength */
-  pwLength = prompt("How many characters do you want your password to include? (Please choose a value between 8 and 128)");
+  pwLength = Number (prompt("How many characters do you want your password to include? (Please choose a value between 8 and 128)"));
 
   /* Conditionals set so user can only choose a length between 8 and 128 characters */
   if (pwLength < 8 ) {
@@ -68,9 +67,10 @@ function randomPw() {
 /* Loop for creating a random numbers list as long as pwLength */
   for (var i = 0; i < pwLength; i++) {
     var userChoiceSliced = userChoice.slice(0);
-    var uniquePassword = userChoiceSliced.charAt(Math.floor(Math.random() * userChoiceSliced.length));
-
-    console.log(uniquePassword);
+    var randomChar = userChoiceSliced.charAt(Math.floor(Math.random() * userChoiceSliced.length));
+    
+    // passwordArray = passwordArray[pwLength].concat(passwordArray)
+    console.log(randomChar);
     
   }
 }
