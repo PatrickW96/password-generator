@@ -1,13 +1,14 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-/* Creating var to hold users character choices */
+// Creating var to hold users character choices
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
 var upperCase = lowerCase.toUpperCase(); 
 var numbers = "01234567890123456789";
-var symbols = "!@#$%^&*(){}[]<>/?_+=!@#$%^&*(){}[]<>";
+var symbols = "!@#$%^&*(){}[]<>/?_+=";
 var userChoice = "";
-/* Creating var to hold pwLength */
+
+// Creating var to hold pwLength
 pwLength = 0;
 
 
@@ -21,13 +22,13 @@ function writePassword() {
   console.log("everything works");
 }
 
-/* Fucntion that generates a random password for user */
+// Function that generates a random charaters for user password
 function generatePassword() {
   console.log("we in here");
-  /* Creating a var to pwlength */
+  // Creating a var to find out and hold password length
   pwLength = Number (prompt("How many characters do you want your password to include? (Please choose a value between 8 and 128)"));
 
-  /* Conditionals set so user can only choose a length between 8 and 128 characters */
+  // Conditional that checks whether the pwLength is a valid value
   if (pwLength < 8 ) {
     alert("Please choose a value between 8 and 128");
     return;
@@ -36,13 +37,13 @@ function generatePassword() {
     return;
   }
 
-  /* Creating var to hold charset choices */
+  // Creating var to hold charset choices
   var useLowerCase = confirm("Would you like to include Lowercase letters in your password?");
   var useUpperCase = confirm("Would you like to use Uppercase letters in your password?");
   var useNumbers = confirm("Would you like to include Numbers in your password?");
   var useSymbols = confirm("Would you like to use Special Characters in your password?");
 
-  /* Creating conditional that adds the charset the user chooses to useChoices var */
+  // Creating conditional that adds the charsets chosen by the user to userChoice var
   if (useLowerCase) {
     userChoice += lowerCase;
   } 
@@ -61,16 +62,15 @@ function generatePassword() {
 
 } 
 
-/* Creating function that creates the unique password based on the above criteria */
+// Creating function that generates a unique password based on user criteria
 function randomPw() {  
-/* Loop for creating random charset with as many character as number value stored in pwLength */
-  for (var i = 0; i < pwLength; i++) {
-    var userChoiceSliced = userChoice.slice(0);
-    var uniquePassword = userChoiceSliced.charAt(Math.floor(Math.random() * userChoiceSliced.length));
+  var uniquePassword = "";
 
-    
-    console.log(uniquePassword);
+// Loop to pull a random character from users chosen character sets and add that character to the uniquePassword var
+  for (var i = 0; i < pwLength; i++) {
+    uniquePassword = uniquePassword + userChoice.charAt(Math.floor(Math.random() * Math.floor(userChoice.length) - 1));    
   }
+    console.log(uniquePassword);
 }
 
 
