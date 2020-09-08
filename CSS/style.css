@@ -74,7 +74,7 @@ header {
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #27578b;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -90,8 +90,9 @@ header {
 
 /* Styling for copy to clipboard button */
 .clipboard-icon {
+  display: flex;
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #27578b;
   border-radius: 25px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
     0px;
@@ -99,11 +100,15 @@ header {
   display: inline-block;
   font-size: 18px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 16px 10px 16px 20px;
   padding: 12px 30px;
   text-align: center;
   cursor: pointer;
 }
+
+.clipboard-icon:active {
+  background-color: #5fc076;
+} 
 
 button[disabled] {
   cursor: default;
