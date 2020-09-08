@@ -11,17 +11,6 @@ var userChoice = "";
 // Creating var to hold pwLength
 pwLength = 0;
 
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-  console.log("everything works");
-}
-
 // Function that generates a random charaters for user password
 function generatePassword() {
   console.log("we in here");
@@ -57,22 +46,28 @@ function generatePassword() {
     userChoice += symbols;
   }
 
-  randomPw();
-  console.log(userChoice);
-
+  displayPassword();
+  // console.log(randomPw());
 } 
 
 // Creating function that generates a unique password based on user criteria
 function randomPw() {  
-  var uniquePassword = "";
+  uniquePassword = "";
 
 // Loop to pull a random character from users chosen character sets and add that character to the uniquePassword var
   for (var i = 0; i < pwLength; i++) {
-    uniquePassword = uniquePassword + userChoice.charAt(Math.floor(Math.random() * Math.floor(userChoice.length) - 1));    
+    uniquePassword = uniquePassword + userChoice.charAt(Math.floor(Math.random() * Math.floor(userChoice.length) - 1)); 
+
   }
-    console.log(uniquePassword);
+  return uniquePassword;
+}
+
+// Write password to the #password input
+// Function that displays password
+function displayPassword() {
+  document.getElementById("password").value = randomPw();
 }
 
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
