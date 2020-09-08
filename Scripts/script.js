@@ -1,5 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var clipboardIconBtn = document.querySelector("#copy")
 
 // Creating var to hold users character choices
 var lowerCase = "abcdefghijklmnopqrstuvwxyz"; 
@@ -14,7 +15,6 @@ pwLength = 0;
 // Function that generates a random charaters for user password
 function generatePassword() {
   console.log("we in here");
-  // Creating a var to find out and hold password length
   pwLength = Number (prompt("How many characters do you want your password to include? (Please choose a value between 8 and 128)"));
 
   // Conditional that checks whether the pwLength is a valid value
@@ -47,7 +47,6 @@ function generatePassword() {
   }
 
   displayPassword();
-  // console.log(randomPw());
 } 
 
 // Creating function that generates a unique password based on user criteria
@@ -65,9 +64,21 @@ function randomPw() {
 // Write password to the #password input
 // Function that displays password
 function displayPassword() {
-  document.getElementById("password").value = randomPw();
+  displayUniquePassword = document.getElementById("password").value = randomPw();
+
+}
+
+// Copy to Clipboard function
+function copyToClipboard() {
+  var textareaEl = document.getElementById("password").select();
+
+  document.execCommand("copy");
+
+  
+
 }
 
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", generatePassword);
+clipboardIconBtn.addEventListener("click", copyToClipboard);
